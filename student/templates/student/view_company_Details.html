@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Company Details</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li class="active">company</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="row m-auto">
+    {% for student in company %}
+    <div class="card " style="width: 18rem;">
+{#  <img src="{{ student.photo.url }}" class="card-img-top h-25" alt="...">#}
+  <div class="card-body">
+    <h5 class="card-title">Company Profile</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Name:{{ student.name }}</li>
+    <li class="list-group-item">Address:{{ student.address }}</li>
+    <li class="list-group-item">Salary:{{ student.salary }}</li>
+      <li class="list-group-item">Bond:{{ student.bond }}</li>
+      <li class="list-group-item">Email:{{ student.email }}</li>
+      <li class="list-group-item">Selecton Careteria:{{ student.careteria }}</li>
+      <li class="list-group-item">Phone No:{{ student.phoneno }}</li>
+
+
+  </ul>
+        <div class="card-body">
+    <a href="{% url 'delatestudent' student.id %}" class="card-link">Delete</a>
+    <a href="{% url "editCompany" student.id %}" class="card-link">Edit Student</a>
+  </div>
+</div>
+    {% endfor %}
+    </div>
+
+
+
+    <div class="container">
+        <div>
+            <table class="table table-primary table-striped table-bordered table-responsive table-responsive-md table-responsive-lg table-responsive-sm ">
+                <thead>
+                <tr >
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>Class</td>
+                    <td>Semester</td>
+                    <td>Age</td>
+                    <td>Gender</td>
+                    <td>Email</td>
+                    <td>Phone No</td>
+                    <td>Photo</td>
+                </tr>
+                </thead>
+                {% for student in student %}
+                <tr class="col-md-3">
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.address }}</td>
+                    <td>{{ student.class1 }}</td>
+                    <td>{{ student.semester }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.gender }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.phoneno }}</td>
+                    <td>{{ student.photo.url }}</td>
+
+                </tr>
+                {% endfor %}
+
+            </table>
+
+        </div>
+    </div>
+ {% endblock content %}

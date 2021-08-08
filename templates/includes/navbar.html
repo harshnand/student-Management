@@ -1,0 +1,46 @@
+{% load static %}
+<header class="main-header  sticky-header header-with-top">
+    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light   ">
+  <div class="container ">
+       <a class="navbar-brand resp img-fluid  " href="#">
+                <img src="{% static 'img/citlogo.png' %}" alt="logo" class="w-25 align-bottom">
+            </a>
+    <a href="{% url 'home' %}" class="navbar-brand text-light nav-link">Home</a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsiveMedium" aria-controls="navbarResponsiveMedium" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse w-100" id="navbarResponsiveMedium">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a href="{% url 'addstudentdetail' %}" class="nav-link " aria-current="page">Add Student</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'studentdetails' %}" class="nav-link ">Student Details</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'companydetails' %}" class="nav-link">Company</a>
+        </li>
+          <li class="nav-item">
+          <a href="{% url 'viewcompanydetails' %}" class="nav-link">View Company</a>
+        </li>
+          <li class="nav-item">
+          <a href="{% url 'addplacement'  %}" class="nav-link">Add Placement</a>
+        </li>
+          <li class="nav-item">
+          <a href="{% url 'placementdetails' %}" class="nav-link">View Placement</a>
+        </li>
+          <li class="nav-item">
+          <a href="#" class="nav-link ">About</a>
+        </li>
+          <li class="nav-item">
+          <a href="#" class="nav-link al ">Contact Us</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+    </div>
+</header>

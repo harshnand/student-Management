@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Add Your Details</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li class="active">Students</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% include 'includes/message.html' %}
+     <div id="contact" class="container ">
+    <div class="form-box form-section ">
+        <form action="{% url 'companydetails' %}" method="POST">
+            {% csrf_token %}
+        <div class="mb-3 bb ">
+                 <label for="comp-name" class="form-label">Company Name</label>
+                 {{ form.name }}
+        </div>
+        <div class="mb-3">
+                 <label for="address" class="form-label"> Company Address</label>
+                 {{ form.address}}
+        </div>
+        <div class="mb-3">
+                 <label for="class" class="form-label"> Salary</label>
+                 {{ form.salary }}
+        </div>
+        <div class="mb-3">
+                 <label for="sem" class="form-label">Bound</label>
+                 {{ form.bond }}
+        </div>
+        <div class="mb-3">
+                 <label for="email" class="form-label">Company Email addres</label>
+                 {{ form.email }}
+        </div>
+        <div class="mb-3">
+                 <label for="age" class="form-label">Selection Careteria</label>
+                 {{ form.careteria }}
+        </div>
+        <div class="mb-3">
+                 <label for="phone" class="form-label">Company Phone Number</label>
+                 {{ form.phoneno }}
+        </div>
+
+
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-lg btn-primary">Subbmit</button>
+
+
+        </div>
+        </form>
+
+    </div>
+
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Placement Details</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li class="active">Placement</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div>
+            <table class="table table-primary table-striped table-bordered table-responsive table-responsive-md table-responsive-lg table-responsive-sm ">
+                <thead>
+                <tr >
+                    <td>Student Name</td>
+                    <td>Student Address</td>
+                    <td>Student Email</td>
+                    <td>Student Phoneno</td>
+                    <td>Company Name</td>
+                    <td>Company Email</td>
+                    <td>Company Phoneno</td>
+                    <td>Salary</td>
+                    <td>Placement Year</td>
+                </tr>
+                </thead>
+                <tr class="col-md-3">
+                    <td>harsh</td>
+                    <td>balchand bigha</td>
+                    <td>Mca</td>
+                    <td>6</td>
+                    <td>25</td>
+                    <td>Male</td>
+                    <td>haesh@gmail.com</td>
+                    <td>8804919429</td>
+
+                </tr>
+                 <tr class="col-md-3">
+                    <td>harsh</td>
+                    <td>balchand bigha</td>
+                    <td>Mca</td>
+                    <td>6</td>
+                    <td>25</td>
+                    <td>Male</td>
+                    <td>haesh@gmail.com</td>
+                    <td>8804919429</td>
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+ {% endblock content %}

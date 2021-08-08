@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Add Placement Details</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url "home" %}">Home</a></li>
+                <li class="active">Placement</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div id="contact" class="container ">
+    <div class="form-box form-section ">
+    <form action="{% url 'addplacement'  %}" method="POST">
+        {% csrf_token %}
+
+
+        <div class="mb-3 bb ">
+        {% include 'includes/message.html' %}
+                 <label for="name" class="form-label">Student Name</label>
+{#            {{ form.student_name }}#}
+                 <select class="form-control" aria-label="Default select example" name="stu">
+                           <option selected disabled > ---select----</option>
+                          {% for placemennt in placement %}
+                          <option value="{{placemennt.name }}" >{{placemennt.name }}</option>
+                     {% endfor %}
+
+
+                 </select>
+        </div>
+
+        <div class="mb-3">
+                 <label for="sem" class="form-label">Placed In</label>
+
+                 <select class="form-control" aria-label="Default select example" name="comp">
+{#                     {{ form.company_name }}#}
+
+                 <option selected disabled > ---select----</option>
+                          {% for placemennt in placement1 %}
+                          <option value="{placemennt.name }}" >{{placemennt.name }}</option>
+                     {% endfor %}
+
+
+                 </select>
+        </div>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Year</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="year" name="year">
+</div>
+
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-lg btn-primary">Button</button>
+
+
+        </div>
+    </form>
+
+    </div>
+
+
+    </div>
+
+
+{% endblock content %}
